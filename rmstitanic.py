@@ -1,8 +1,4 @@
-
 import pandas as pd
-
-train = pd.read_csv('train.csv')
-test = pd.read_csv('test.csv')
 
 def cleandata(df):
 	df = train.drop(['Cabin'], axis = 1)#because there is so much missing data from cabin just remove it
@@ -12,5 +8,7 @@ def cleandata(df):
 	return df
 
 
-train = cleandata(train)
-print (train.head())
+if __name__ == 'main':
+    train = pd.read_csv('train.csv')
+    train = cleandata(train)
+    print (train.head())
